@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------
+    PALETA DE CORES — TEMA AZUL PREMIUM
+--------------------------------------------------- */
+
+:root {
+  /* Base */
+  --background: #eaf2fb;          /* Azul bem claro */
+  --foreground: #0f2a55;          /* Azul escuro elegante */
+
+  /* Cards e superfícies */
+  --card: #ffffff;                /* Branco limpo */
+  --card-foreground: #0f2a55;
+
+  /* Bordas e inputs */
+  --border: #c7d6ea;              /* Azul claro neutro */
+  --input: #b8cbe0;
+
+  /* Primária (CTA) */
+  --primary: #3b82f6;             /* Azul vibrante */
+  --primary-foreground: #ffffff;
+
+  /* Secundária */
+  --secondary: #6366f1;           /* Indigo */
+  --secondary-foreground: #ffffff;
+
+  /* Neutros / Muted */
+  --muted: #dce7f7;               /* Azul extremamente claro */
+  --muted-foreground: #5a6b85;
+
+  /* Acentos */
+  --accent: #cfe5ff;              /* Azul muito suave */
+  --accent-foreground: #0f2a55;
+
+  /* Estado destrutivo */
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  /* Highlight (rings e focus) */
+  --ring: #3b82f6;
+}
+
+/* ---------------------------------------------------
+    DARK MODE — AZUL PREMIUM ESCURO
+--------------------------------------------------- */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b1528;             /* Azul quase preto */
+    --foreground: #e2e8f7;
+
+    --card: #111a2f;
+    --card-foreground: #e2e8f7;
+
+    --border: #1f2a3d;
+    --input: #24344c;
+
+    --primary: #60a5fa;
+    --primary-foreground: #0c0c0c;
+
+    --secondary: #818cf8;
+    --secondary-foreground: #111;
+
+    --muted: #151e33;
+    --muted-foreground: #a1adc9;
+
+    --accent: #1f2d4d;
+    --accent-foreground: #e8efff;
+
+    --destructive: #f87171;
+    --destructive-foreground: #111;
+
+    --ring: #60a5fa;
+  }
+}
+
+/* ---------------------------------------------------
+    ESTILOS GLOBAIS
+--------------------------------------------------- */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+
+  /* Transições suaves */
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+/* Melhora legibilidade geral */
+* {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------------------------------------------
+    COMPONENTES GLOBAIS (opcional, mas útil)
+--------------------------------------------------- */
+
+/* Cards */
+.card {
+  background: var(--card);
+  color: var(--card-foreground);
+  border: 1px solid var(--border);
+  @apply rounded-xl p-6 shadow-sm transition hover:shadow-md;
+}
+
+/* Botões primários */
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  @apply px-4 py-2 rounded-lg font-semibold shadow-sm transition hover:opacity-90;
+}
+
+/* Botões secundários */
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+  @apply px-4 py-2 rounded-lg font-semibold shadow-sm transition hover:opacity-90;
+}
+
+/* Inputs */
+.input {
+  background: var(--card);
+  border: 1px solid var(--input);
+  color: var(--foreground);
+  @apply px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--ring)];
+}
